@@ -1,0 +1,38 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Honk&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Rubik+Bubbles&display=swap');
+
+body {
+  background-image: url(/images/background.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+  margin-top: 250px;
+}
+
+body h1 {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  color: white;
+  font-size: 75px;
+}
+
+body h2 {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  color: orange;
+  font-size: 35px;
+}
+
+body p {
+  font-family: "Caprasimo", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 25px;
+} */
