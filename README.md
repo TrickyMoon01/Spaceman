@@ -9,6 +9,10 @@ The game I chose was spaceman. I chose spaceman because it was the easiest one t
 * **HTML**
 * **CSS**
 
+## 2. Next Steps
+
+Future plans will be to add visuals for hangman.
+
 
 [Game](https://trickymoon01.github.io/spaceman/)
 
