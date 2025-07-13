@@ -10,7 +10,7 @@ body {
   justify-content: center;
 }
 body.win {
-  background-image: url(/images/background.gif);
+  background-image: url(./images/background.gif);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
