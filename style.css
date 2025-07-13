@@ -1,14 +1,24 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Honk&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Rubik+Bubbles&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Honk&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Rubik+Bubbles&display=swap");
 
 body {
+  background-color: black;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 90vh;
+  justify-content: center;
+}
+body.win {
   background-image: url(/images/background.gif);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  font-family: system-ui, sans-serif;
-  text-align: center;
-  margin-top: 250px;
+}
+
+body.reset {
+  background-color: black;
 }
 
 body h1 {
@@ -16,17 +26,8 @@ body h1 {
   font-optical-sizing: auto;
   font-weight: weight;
   font-style: normal;
-  color: white;
+  color: lightblue;
   font-size: 75px;
-}
-
-body h2 {
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
-  color: orange;
-  font-size: 35px;
 }
 
 body p {
@@ -35,15 +36,27 @@ body p {
   font-style: normal;
   color: white;
   font-size: 25px;
-} */
-.correct,.wrong{
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.correct,.wrong {
   font-size: 30px;
   letter-spacing: 5px;
 }
 
-.wrong{
-  color:red
+.wrong {
+  color: #e60000;
 }
-.hidden{
+.hidden {
   display: none;
 }
+
+/* delete in production */
+#test {
+  color: red;
+}
+/* delete in production */
