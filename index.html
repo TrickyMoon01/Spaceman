@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spaceman</title>
-  <link rel="stylesheet" href="/style.css" />
-  <link rel="icon" type="image/png" href="/images/favicon.png">
-</head>
-  <h1>Spaceman</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus doloribus sunt modi eum quibusdam fugiat, debitis culpa! Qui in reiciendis, nam accusamus sit nobis saepe error repellat aut debitis. Dolore!</p>
-  <h2>Basketball Edition</h2>
-  <p>Wrong guesses:<span id="wrongLetters" class="wrong"></span></p>
-  <p>Guess a letter:<span id="correctLetters" class="correct"></span></p>
-  <div id="test"></div>
-  <input type="text" id="letterInput" maxlength="1" />
-  <button id="guess">Guess</button>
-  <script src="./app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spaceman</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+  </head>
+  <body>
+    <h1>Spaceman</h1>
+    <p>
+      Some rules how to play : TODO
+    </p>
+    <h2>Basketball Edition</h2>
+    <p>Wrong guesses:<span id="wrongLetters" class="wrong"></span></p>
+    <p>Guess a letter:<span id="correctLetters" class="correct"></span></p>
+    <div id="test"></div>
+    <section id="play">
+      <input type="text" id="letterInput" maxlength="1" />
+      <button id="guess">Guess</button>
+    </section>
+    <section id="over" class="hidden">
+      <p>GAME OVER</p>
+      <!-- maybe some image -->
+       <button id="reset">Reset</button>
+    </section>
+    <section id="winner" class="hidden">
+      <p>You WON!</p>
+      <!-- maybe some image -->
+       <button id="again">Play again</button>
+    </section>
+
+
+    <script src="./app.js"></script>
+  </body>
 </html>

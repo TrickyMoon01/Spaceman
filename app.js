@@ -16,17 +16,21 @@ const word = [
 ];
 let wordToGuess = [];
 let currentProgress = [];
-
-//let board = [];
-//let guess = [];
 let wrong = [];
-//let right = [];
 
 /*----- Cached Element References  -----*/
 const wrongLettersElement = document.querySelector("#wrongLetters");
 const correctLettersElement = document.querySelector("#correctLetters");
 const letterInputElement = document.querySelector("#letterInput");
-const guessElement = document.querySelector("#guess");
+
+const playSection = document.querySelector("#play");
+const guessButton = document.querySelector("#guess");
+
+const overSection = document.querySelector("#over");
+const resetButton = document.querySelector("#reset");
+
+const winnerSection = document.querySelector("#winner");
+const againButton = document.querySelector("#again");
 
 /*-------------- Functions -------------*/
 function startTheGame() {
@@ -34,7 +38,10 @@ function startTheGame() {
   const wordToGuessIndex = Math.floor(Math.random() * word.length);
   wordToGuess = word[wordToGuessIndex].split("");
   currentProgress = Array(wordToGuess.length).fill("_");
+  const spaceIndex = wordToGuess.findIndex(l=>l===' ')
+  currentProgress[spaceIndex] = ' '
   correctLettersElement.innerText = currentProgress.join("");
+  wrongLettersElement.innerText = wrong.join("");
   document.querySelector("#test").innerText = wordToGuess.join("");
 }
 function checkLetterInput(letter) {
@@ -49,7 +56,7 @@ function checkLetterInput(letter) {
       if (correctLetter.toLowerCase() === letter.toLowerCase()) {
         //show the letter and display it
         // update my currentProgress state
-        currentProgress[i] = letter;
+        currentProgress[i] = wordToGuess[i];
         correctLettersElement.innerText = currentProgress.join("");
       }
     }
@@ -60,12 +67,72 @@ function checkLetterInput(letter) {
       wrongLettersElement.innerText = wrong.join("");
     }
   }
+  //every time this function is invoked we check whether we can proceed to play;
+  //so won or loose
+  if(wrong.length >= MAX_GUESSES){
+    gameOver()
+  }else if(currentProgress.join('') === wordToGuess.join('')){
+    winner()
+  }
+}
+function gameOver(){
+    //render some end of game message
+    //show overSection
+    overSection.classList.remove('hidden')
+    //hide playSection
+    playSection.classList.add('hidden')
+    //we show correct answer
+    correctLettersElement.innerText = wordToGuess.join("");
+}
+function winner(){
+    //render some winner of game message
+    //show winnerSection
+    winnerSection.classList.remove('hidden')
+    //hide playSection
+    playSection.classList.add('hidden')
+}
+function reset(){
+    wordToGuess=[]
+    currentProgress = []
+    wrong = [];
+    //hide overSection
+    overSection.classList.add('hidden')
+    //hide winnerSection
+    winnerSection.classList.add('hidden')
+    //show playSection
+    playSection.classList.remove('hidden')
+    startTheGame()
 }
 /*----------- Event Listeners ----------*/
-guessElement.addEventListener("click", function () {
+guessButton.addEventListener("click", function () {
   const letter = letterInputElement.value;
   letterInputElement.value = "";
   checkLetterInput(letter);
+  //everytime we click on button, out input lose focus
+  //so we need to put it back
+  letterInputElement.focus()
 });
+
+resetButton.addEventListener('click',function(){
+    reset()
+})
+againButton.addEventListener('click',function(){
+    reset()
+})
+
+document.addEventListener("keypress", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    //we simulate click event what already has proper event listener
+    if (event.key === "Enter") {
+        if(wrong.length >= MAX_GUESSES){
+            resetButton.click()
+        }else if(currentProgress.join('') === wordToGuess.join('')){
+            againButton.click()
+        }
+        else{
+            guessButton.click();
+        }
+    }
+  });
 
 startTheGame();
