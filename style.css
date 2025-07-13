@@ -36,3 +36,11 @@ body p {
   color: white;
   font-size: 25px;
 } */
+.correct,.wrong{
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+.wrong{
+  color:red
+}
