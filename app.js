@@ -51,7 +51,7 @@ function startTheGame() {
   wrongLettersElement.innerText = wrongLetters.join("");
 
   //code to show correct answer for comparison
-  document.querySelector("#test").innerText = wordToGuessLetters.join(""); //delete in production
+  // document.querySelector("#test").innerText = wordToGuessLetters.join(""); //delete in production
 }
 function checkLetterInput(letter) {
   //first we can check whether letter is even present;
