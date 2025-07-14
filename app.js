@@ -9,7 +9,7 @@ const words = [
   "Anthony Davis",
   "Anthony Edwards",
   "Ben Simmons",
-  "Ja Morant",
+  "Tyrese Maxey",
   "Kyrie Irving",
 ];
 
